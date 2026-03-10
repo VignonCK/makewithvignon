@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0f;
+    color: #e8e8f0;
+    font-family: 'Syne', sans-serif;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(10,10,15,0.95);
+    border-bottom: 1px solid #2a2a3a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul a {
+    color: #6b6b85;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: #00e5ff;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #6b6b85;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero button {
+    background: #00e5ff;
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,229,255,0.3);
+}
+
+.logo {
+    font-family: 'Space Mono', monospace;
+}
+
+.hero button {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+}
+
+/* STATS */
+.stats {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.stats-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6b6b85;
+    margin-bottom: 3rem;
+    font-family: 'Space Mono', monospace;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: #111118;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    width: 280px;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    border-color: #00e5ff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0,229,255,0.1);
+}
+
+.stat-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00e5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00e5ff;
+}
+
+.stat-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-sub {
+    font-size: 0.8rem;
+    color: #6b6b85;
+    line-height: 1.6;
+}
+
+/* PROJETS */
+.projets {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projets-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.projets-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.75rem;
+}
+
+.projets-header p {
+    color: #6b6b85;
+    font-size: 0.95rem;
+}
+
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.projet-card {
+    background: #111118;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.projet-card:hover {
+    border-color: #00e5ff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0,229,255,0.1);
+}
+
+.projet-thumb {
+    height: 150px;
+    background: #16161f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.projet-body {
+    padding: 1.25rem;
+}
+
+.projet-statut {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.en-cours {
+    color: #ff6b35;
+}
+
+.termine {
+    color: #a8ff3e;
+}
+
+.projet-titre {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.projet-desc {
+    font-size: 0.85rem;
+    color: #6b6b85;
+    line-height: 1.6;
+}
+
+.projets-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.projets-footer button {
+    background: transparent;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.projets-footer button:hover {
+    background: #00e5ff;
+    color: #000;
+}
+
+/* CTA */
+.cta {
+    background: #111118;
+    border-top: 1px solid #2a2a3a;
+    border-bottom: 1px solid #2a2a3a;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    color: #6b6b85;
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.cta button {
+    background: #00e5ff;
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.cta button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,229,255,0.3);
+}
+
+/* FOOTER */
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: #6b6b85;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    background: #00e5ff;
+    color: #000;
+}
