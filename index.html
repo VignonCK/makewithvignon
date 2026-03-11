@@ -10,15 +10,15 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav>
-        <div class="logo">⚡ MakeWithVignon</div>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Projets</a></li>
-            <li><a href="#">Boutique</a></li>
-            <li><a href="#">À propos</a></li>
-        </ul>
-    </nav>
+<nav>
+    <div class="logo">⚡ MakeWithVignon</div>
+    <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="shop.html">Boutique</a></li>
+        <li><a href="about.html">À propos</a></li>
+    </ul>
+</nav>
 
     <!-- HERO -->
     <section class="hero">
@@ -56,19 +56,29 @@
     </div>
     <div class="projets-grid">
         <div class="projet-card">
-            <div class="projet-thumb">🔌</div>
+            <div class="projet-thumb">
+                <div class="projet-placeholder">📷 Photo du montage à venir</div>
+            </div>
             <div class="projet-body">
                 <div class="projet-statut en-cours">● En cours</div>
-                <div class="projet-titre">Mon premier projet</div>
-                <div class="projet-desc">Description à venir...</div>
+                <div class="projet-titre">Afficher la luminosité LED sur LCD 16×2</div>
+                <div class="projet-desc">Contrôle de la luminosité d'une LED via un potentiomètre avec affichage en barre de progression sur écran LCD 16×2.</div>
+                <div class="projet-composants">
+                    <span class="composant">Arduino UNO</span>
+                    <span class="composant">LCD 16×2</span>
+                    <span class="composant">Potentiomètre 10kΩ</span>
+                    <span class="composant">LED</span>
+                    <span class="composant">Résistance 220Ω</span>
+                    <span class="composant">Breadboard</span>
+                    <span class="composant">Jumper Wires</span>
+                </div>
             </div>
         </div>
     </div>
     <div class="projets-footer">
-        <button>Voir tous les projets</button>
+        <a href="projects.html"><button>Voir tous les projets</button></a>
     </div>
 </section>
-
 <!-- CTA -->
 <section class="cta">
     <h2>Vous avez un projet en tête ?</h2>
