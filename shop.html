@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique — MakeWithVignon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">⚡ MakeWithVignon</div>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="shop.html" class="active">Boutique</a></li>
+            <li><a href="about.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="page-header">
+        <h1>La <span>Boutique</span></h1>
+        <p>Kits électroniques disponibles sur commande — livraison sous 2 semaines</p>
+    </section>
+
+    <!-- KITS -->
+    <section class="shop-page">
+
+        <div class="shop-section-title">⚙️ Kits électroniques</div>
+        <div class="shop-grid">
+
+            <!-- KIT ARDUINO -->
+            <div class="kit-card">
+                <div class="kit-thumb">
+                    <div class="projet-placeholder">📷 Photo du kit à venir</div>
+                </div>
+                <div class="kit-body">
+                    <div class="kit-nom">Kit Arduino — 30 composants</div>
+                    <div class="kit-desc">Kit complet pour bien démarrer en électronique avec Arduino. 30 composants essentiels pour réaliser vos premiers montages.</div>
+                    <div class="kit-footer">
+                        <div class="kit-prix">30 000 FCFA</div>
+                        <button class="btn-commander" onclick="ouvrirFormulaire('Kit Arduino — 30 composants', '30 000 FCFA')">Commander</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KIT RASPBERRY -->
+            <div class="kit-card">
+                <div class="kit-thumb">
+                    <div class="projet-placeholder">📷 Photo du kit à venir</div>
+                </div>
+                <div class="kit-body">
+                    <div class="kit-nom">Kit Raspberry Pi</div>
+                    <div class="kit-desc">Kit complet Raspberry Pi pour vos projets électroniques avancés. Contenu et prix à venir.</div>
+                    <div class="kit-footer">
+                        <div class="kit-prix">Prix à venir</div>
+                        <button class="btn-commander" disabled style="opacity:0.4;cursor:not-allowed">Bientôt</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SETUPS -->
+        <div class="shop-section-title" style="margin-top:3rem">💻 Setups logiciels</div>
+        <div class="shop-grid">
+            <div class="kit-card">
+                <div class="kit-thumb">
+                    <div class="projet-placeholder">📷 Image à venir</div>
+                </div>
+                <div class="kit-body">
+                    <div class="kit-nom">Setups Fritzing</div>
+                    <div class="kit-desc">Fichiers de schémas électroniques téléchargeables. Disponibles bientôt.</div>
+                    <div class="kit-footer">
+                        <div class="kit-prix">Bientôt disponible</div>
+                        <button class="btn-commander" disabled style="opacity:0.4;cursor:not-allowed">Bientôt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- WHATSAPP -->
+    <div class="whatsapp-btn">
+        <a href="https://wa.me/22901624634?text=Bonjour%20MakeWithVignon%2C%20j%27ai%20une%20question..." target="_blank">
+            💬 Une question ? Discutons sur WhatsApp
+        </a>
+    </div>
+
+    <!-- FORMULAIRE DE COMMANDE -->
+    <div class="modal-overlay" id="modalCommande">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Commander un kit</h3>
+                <button class="modal-close" onclick="fermerFormulaire()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="field">
+                    <label>Nom complet *</label>
+                    <input type="text" id="nom" placeholder="Votre nom et prénom">
+                </div>
+                <div class="field">
+                    <label>Numéro de téléphone *</label>
+                    <input type="tel" id="telephone" placeholder="Ex: 97000000">
+                </div>
+                <div class="field">
+                    <label>Ville / Quartier *</label>
+                    <input type="text" id="adresse" placeholder="Ex: Cotonou, Akpakpa">
+                </div>
+                <div class="field">
+                    <label>Kit choisi</label>
+                    <input type="text" id="kit" readonly>
+                </div>
+                <div class="field">
+                    <label>Quantité *</label>
+                    <input type="number" id="quantite" value="1" min="1">
+                </div>
+                <button class="btn-payer" onclick="confirmerCommande()">Confirmer la commande →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE CONFIRMATION -->
+    <div class="modal-overlay" id="modalConfirmation">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>✅ Commande enregistrée !</h3>
+                <button class="modal-close" onclick="fermerConfirmation()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p class="confirmation-text">Merci pour votre commande ! Effectuez votre paiement via Mobile Money puis envoyez la capture du paiement sur WhatsApp.</p>
+
+                <div class="paiement-instructions">
+                    <div class="paiement-option">
+                        <div class="paiement-titre">📱 MTN Mobile Money</div>
+                        <div class="paiement-code">*880#</div>
+                        <div class="paiement-detail">Numéro : 01 62 46 34 76</div>
+                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+                    </div>
+                    <div class="paiement-option">
+                        <div class="paiement-titre">📱 Moov Money</div>
+                        <div class="paiement-code">*155#</div>
+                        <div class="paiement-detail">Numéro : 01 58 14 25 80</div>
+                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+                    </div>
+                    <div class="paiement-option" style="border-bottom:none;padding-bottom:0">
+                        <div class="paiement-titre">📱 Celtiis</div>
+                        <div class="paiement-code">*555#</div>
+                        <div class="paiement-detail">Numéro : 01 47 80 94 13</div>
+                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/22901624634?text=Bonjour%2C%20voici%20ma%20capture%20de%20paiement%20pour%20ma%20commande%20MakeWithVignon" target="_blank">
+                    <button class="btn-payer" style="margin-top:1rem">📲 Envoyer la capture sur WhatsApp</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 MakeWithVignon — Cotonou, Bénin</p>
+    </footer>
+
+    <script>
+        function ouvrirFormulaire(kitNom, kitPrix) {
+            document.getElementById('kit').value = kitNom + ' — ' + kitPrix;
+            document.getElementById('modalCommande').style.display = 'flex';
+        }
+
+        function fermerFormulaire() {
+            document.getElementById('modalCommande').style.display = 'none';
+        }
+
+        function confirmerCommande() {
+            const nom = document.getElementById('nom').value;
+            const telephone = document.getElementById('telephone').value;
+            const adresse = document.getElementById('adresse').value;
+
+            if (!nom || !telephone || !adresse) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+
+            fermerFormulaire();
+            document.getElementById('modalConfirmation').style.display = 'flex';
+        }
+
+        function fermerConfirmation() {
+            document.getElementById('modalConfirmation').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
