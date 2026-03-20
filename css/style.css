@@ -725,3 +725,35 @@ a .stat-circle:hover {
   transform: scale(1.1);
   cursor: pointer;
 }*/
+
+.numero-copy {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-copier {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    background: #a8ff3e;
+    border: none;
+    color: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-copier:hover {
+    background: #c8ff6e;
+    transform: scale(1.05);
+}
+
+.btn-copier.copie {
+    background: #25D366;
+    color: #fff;
+}

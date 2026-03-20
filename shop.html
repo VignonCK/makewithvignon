@@ -86,7 +86,7 @@
 
     <!-- WHATSAPP -->
     <div class="whatsapp-btn">
-        <a href="https://wa.me/22901624634?text=Bonjour%20MakeWithVignon%2C%20j%27ai%20une%20question..." target="_blank">
+        <a href="https://wa.me/2290141822980?text=Bonjour%20MakeWithVignon%2C%20j%27ai%20une%20question..." target="_blank">
             💬 Une question ? Discutons sur WhatsApp
         </a>
     </div>
@@ -136,26 +136,37 @@
 
                 <div class="paiement-instructions">
                     <div class="paiement-option">
-                        <div class="paiement-titre">📱 MTN Mobile Money</div>
-                        <div class="paiement-code">*880#</div>
-                        <div class="paiement-detail">Numéro : 01 62 46 34 76</div>
-                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
-                    </div>
-                    <div class="paiement-option">
-                        <div class="paiement-titre">📱 Moov Money</div>
-                        <div class="paiement-code">*155#</div>
-                        <div class="paiement-detail">Numéro : 01 58 14 25 80</div>
-                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
-                    </div>
-                    <div class="paiement-option" style="border-bottom:none;padding-bottom:0">
-                        <div class="paiement-titre">📱 Celtiis</div>
-                        <div class="paiement-code">*555#</div>
-                        <div class="paiement-detail">Numéro : 01 47 80 94 13</div>
-                        <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
-                    </div>
+    <div class="paiement-titre">📱 MTN Mobile Money</div>
+    <div class="paiement-code">*880#</div>
+    <div class="paiement-detail numero-copy">
+        <span>Numéro : 01 62 46 34 76</span>
+        <button class="btn-copier" onclick="copierNumero('0162463476', this)">Copier</button>
+    </div>
+    <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+</div>
+
+<div class="paiement-option">
+    <div class="paiement-titre">📱 Moov Money</div>
+    <div class="paiement-code">*155#</div>
+    <div class="paiement-detail numero-copy">
+        <span>Numéro : 01 58 14 25 80</span>
+        <button class="btn-copier" onclick="copierNumero('0158142580', this)">Copier</button>
+    </div>
+    <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+</div>
+
+<div class="paiement-option" style="border-bottom:none;padding-bottom:0">
+    <div class="paiement-titre">📱 Celtiis</div>
+    <div class="paiement-code">*555#</div>
+    <div class="paiement-detail numero-copy">
+        <span>Numéro : 01 47 80 94 13</span>
+        <button class="btn-copier" onclick="copierNumero('0147809413', this)">Copier</button>
+    </div>
+    <div class="paiement-detail">Nom : KANLINHANON Vignon Cadel Lévis</div>
+</div>
                 </div>
 
-                <a href="https://wa.me/22901624634?text=Bonjour%2C%20voici%20ma%20capture%20de%20paiement%20pour%20ma%20commande%20MakeWithVignon" target="_blank">
+                <a href="https://wa.me/2290141822980?text=Bonjour%2C%20voici%20ma%20capture%20de%20paiement%20pour%20ma%20commande%20MakeWithVignon" target="_blank">
                     <button class="btn-payer" style="margin-top:1rem">📲 Envoyer la capture sur WhatsApp</button>
                 </a>
             </div>
@@ -194,6 +205,17 @@
         function fermerConfirmation() {
             document.getElementById('modalConfirmation').style.display = 'none';
         }
+
+   function copierNumero(numero, btn) {
+    navigator.clipboard.writeText(numero).then(() => {
+        btn.textContent = '✅ Copié !';
+        btn.classList.add('copie');
+        setTimeout(() => {
+            btn.textContent = 'Copier';
+            btn.classList.remove('copie');
+        }, 2000);
+    });
+}
     </script>
 
 </body>
